@@ -1,5 +1,7 @@
 package HackerRank
 
+import scala.util.Random
+
 object CTCIMergeSort {
 
   // Complete the countInversions function below.
@@ -32,18 +34,27 @@ object CTCIMergeSort {
   }
 
   def main(args: Array[String]) {
-    val stdin = scala.io.StdIn
+//    val stdin = scala.io.StdIn
+//
+//    val t = stdin.readLine.trim.toInt
+//
+//    for (tItr <- 1 to t) {
+//      val n = stdin.readLine.trim.toInt
+//
+//      val arr = stdin.readLine.split(" ").map(_.trim.toInt)
+//      val result = countInversions(arr)
+//
+//      println(result)
+//    }
 
-    val t = stdin.readLine.trim.toInt
-
-    for (tItr <- 1 to t) {
-      val n = stdin.readLine.trim.toInt
-
-      val arr = stdin.readLine.split(" ").map(_.trim.toInt)
-      val result = countInversions(arr)
-
-      println(result)
+    val total = (0 until 1000).foldLeft(0L){ case(acc,_) =>
+      val time = System.nanoTime()
+      val allTheInts = Array.fill(1000)(Random.nextInt(100))
+      countInversions(allTheInts)
+      val finish = System.nanoTime()
+      acc + (finish - time)
     }
+    println(s"Average time: ${(total / 1000)/100000}ms")
 
   }
 

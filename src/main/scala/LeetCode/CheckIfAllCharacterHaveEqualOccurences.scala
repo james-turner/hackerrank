@@ -1,0 +1,5 @@
+package LeetCode
+
+object CheckIfAllCharacterHaveEqualOccurences {
+
+}

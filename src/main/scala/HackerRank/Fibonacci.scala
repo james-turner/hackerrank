@@ -4,7 +4,7 @@ import scala.collection.mutable
 
 object Fibonacci extends App {
 
-  def fibonacciDynamic(x:Int):BigInt = {
+  def fibonacciDynamicProgramming(x:Int):BigInt = {
     val m = mutable.Map[Int,BigInt]()
     def inner(x: Int): BigInt ={
       if(x <= 1) x

@@ -27,7 +27,12 @@ object MergeSort extends App {
    } else list
   }
 
-  val allTheInts = List.fill(100)(Random.nextInt(100))
-  val res = mergeSort(allTheInts)
-  res.foreach(println)
+  val total = (0 until 1000).foldLeft(0L){ case(acc,_) =>
+    val time = System.nanoTime()
+    val allTheInts = List.fill(1000)(Random.nextInt(100))
+    mergeSort(allTheInts)
+    val finish = System.nanoTime()
+    acc + (finish - time)
+  }
+  println(s"Average time: ${(total / 1000)/100000}ms")
 }

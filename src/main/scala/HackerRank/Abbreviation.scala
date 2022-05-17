@@ -24,9 +24,6 @@ object Abbreviation {
   }
 
   def main(args: Array[String]) {
-//    val a = "AbcDE"
-//    val b = "ABDE"
-//    println(abbreviation(a,b))
     List(
       ("KXzQ","K","NO"),
       ("ABCD","ABCDE","NO"),

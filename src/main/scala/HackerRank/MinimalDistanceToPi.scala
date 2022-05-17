@@ -52,7 +52,7 @@ object MinimalDistanceToPi extends App {
     def quotients(u0: BigDecimal, frac: ((BigInt,BigInt),(BigInt,BigInt))): (BigInt,BigInt) = {
       if(frac._2._2 > max) frac._1
       else {
-        val head = u0.toBigInt()
+        val head = u0.toBigInt
         val u = 1/(u0-BigDecimal(head))
         quotients(u, (frac._2,(frac._2._1 * head + frac._1._1, frac._2._2 * head + frac._1._2)))
       }
